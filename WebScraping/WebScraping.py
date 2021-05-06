@@ -20,6 +20,8 @@ browser.get(url2)
 url3 = browser.find_element_by_xpath("/html/body/div[9]/div/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[3]/a").get_attribute("href")
 
 req = requests.get(url3)
+
+#Pega o nome do arquivo a partir da url
 nomeArquivo = req.url[url3.rfind('/')+1:]
 
 file_size = int(req.headers.get("Content-Length", 0))
